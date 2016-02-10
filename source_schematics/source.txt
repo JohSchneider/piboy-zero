@@ -1,0 +1,12 @@
+audio output:
+
+https://learn.adafruit.com/introducing-the-raspberry-pi-zero/audio-outputs
+https://learn.adafruit.com/system/assets/assets/000/028/850/original/raspberry_pi_audio.png?1449170282
+
+audio voltage regulation:
+https://github.com/raspberrypi/documentation/blob/master/hardware/raspberrypi/schematics/Raspberry-Pi-Rev-2.1-Model-AB-Schematics.pdf
+(used for video! - might work out for audio :P)
+
+
+spi-tft: "2.2S"
+http://www.elecfreaks.com/wiki/index.php?title=2.2S%22_TFT_LCD:_TFT01-2.2S

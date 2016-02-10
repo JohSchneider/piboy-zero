@@ -1,0 +1,16 @@
+*~
+*.bak
+*.org
+_autosave*
+## generated files
+*.csv
+*.drl
+*.gbl
+*.gbo
+*.gbs
+*.gm1
+*.gtl
+*.gto
+*.gts
+*.net
+*.xml
