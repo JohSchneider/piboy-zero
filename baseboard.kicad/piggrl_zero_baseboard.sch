@@ -29,7 +29,6 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:raspberry_pins
-LIBS:switches
 LIBS:piggrl_zero_baseboard-cache
 EELAYER 25 0
 EELAYER END
@@ -563,7 +562,9 @@ F 3 "" H 3400 2750 60  0000 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	5050 5850 5250 5850
+	5050 5850 5200 5850
+Wire Wire Line
+	5200 5850 5250 5850
 Wire Wire Line
 	4750 5850 4550 5850
 Wire Wire Line
@@ -597,9 +598,25 @@ Wire Wire Line
 Wire Wire Line
 	5600 2500 5600 2600
 Wire Wire Line
-	5600 2700 6100 2700
+	5600 2700 5650 2700
 Wire Wire Line
-	1050 4500 1050 6600
+	5650 2700 5850 2700
+Wire Wire Line
+	5850 2700 6100 2700
+Wire Wire Line
+	1050 4500 1050 4800
+Wire Wire Line
+	1050 4800 1050 5100
+Wire Wire Line
+	1050 5100 1050 5400
+Wire Wire Line
+	1050 5400 1050 5700
+Wire Wire Line
+	1050 5700 1050 6000
+Wire Wire Line
+	1050 6000 1050 6300
+Wire Wire Line
+	1050 6300 1050 6600
 Connection ~ 1050 4800
 Connection ~ 1050 5100
 Connection ~ 1050 5700
@@ -613,7 +630,11 @@ Wire Wire Line
 Wire Wire Line
 	2400 1400 2950 1400
 Wire Wire Line
-	2400 750  2400 1400
+	2400 750  2400 900 
+Wire Wire Line
+	2400 900  2400 1200
+Wire Wire Line
+	2400 1200 2400 1400
 Wire Wire Line
 	2950 1200 2400 1200
 Connection ~ 2400 1200
@@ -631,7 +652,9 @@ Wire Wire Line
 Wire Wire Line
 	2950 800  2500 800 
 Wire Wire Line
-	2950 1300 2450 1300
+	2950 1300 2900 1300
+Wire Wire Line
+	2900 1300 2500 1300
 Wire Wire Line
 	2200 750  2400 750 
 Wire Wire Line
@@ -647,7 +670,9 @@ Wire Wire Line
 Wire Wire Line
 	7950 3850 7950 4050
 Wire Wire Line
-	7750 3850 7950 3850
+	7750 3850 7900 3850
+Wire Wire Line
+	7900 3850 7950 3850
 Wire Wire Line
 	7850 5050 7950 5050
 Wire Wire Line
@@ -659,7 +684,9 @@ Wire Wire Line
 Wire Wire Line
 	7800 4150 7950 4150
 Wire Wire Line
-	7500 4000 7500 4850
+	7500 4000 7500 4150
+Wire Wire Line
+	7500 4150 7500 4850
 Wire Wire Line
 	7500 4850 7950 4850
 Connection ~ 7500 4150
@@ -669,9 +696,17 @@ Wire Wire Line
 	7900 4750 7900 3850
 Connection ~ 7900 3850
 Wire Wire Line
-	6100 5800 6950 5800
+	6100 5800 6850 5800
 Wire Wire Line
-	7550 5050 7550 5600
+	6850 5800 6950 5800
+Wire Wire Line
+	7550 5050 7550 5150
+Wire Wire Line
+	7550 5150 7550 5250
+Wire Wire Line
+	7550 5250 7550 5350
+Wire Wire Line
+	7550 5350 7550 5600
 Connection ~ 7550 5350
 Connection ~ 7550 5250
 Connection ~ 7550 5150
@@ -732,7 +767,9 @@ Wire Wire Line
 Wire Wire Line
 	3650 2650 3600 2650
 Wire Wire Line
-	3600 2900 4300 2900
+	3600 2900 4200 2900
+Wire Wire Line
+	4200 2900 4300 2900
 Wire Wire Line
 	3600 2900 3600 2950
 Wire Wire Line
@@ -863,7 +900,13 @@ spi_3
 Wire Wire Line
 	5600 3100 5650 3100
 Wire Wire Line
-	5650 2700 5650 4100
+	5650 2700 5650 3100
+Wire Wire Line
+	5650 3100 5650 3400
+Wire Wire Line
+	5650 3400 5650 3900
+Wire Wire Line
+	5650 3900 5650 4100
 Connection ~ 5650 2700
 Wire Wire Line
 	5650 3400 5600 3400
@@ -875,7 +918,9 @@ Wire Wire Line
 	5650 4100 5600 4100
 Connection ~ 5650 3900
 Wire Wire Line
-	4200 2900 4200 4400
+	4200 2900 4200 3700
+Wire Wire Line
+	4200 3700 4200 4400
 Wire Wire Line
 	4200 3700 4300 3700
 Connection ~ 4200 2900
@@ -906,12 +951,10 @@ F 3 "" H 3350 3300 60  0000 C CNN
 	1    3350 3300
 	1    0    0    -1  
 $EndComp
-NoConn ~ 4300 3800
 NoConn ~ 4400 4750
 NoConn ~ 4400 4850
 NoConn ~ 5500 4850
 NoConn ~ 5500 4750
-NoConn ~ 2450 1300
 Wire Wire Line
 	6100 5800 6100 3800
 Wire Wire Line
@@ -935,4 +978,9 @@ dpad_5
 Wire Wire Line
 	5250 5850 5250 5450
 Connection ~ 5200 5850
+Wire Wire Line
+	4300 3800 2900 3800
+Wire Wire Line
+	2900 3800 2900 1300
+Connection ~ 2900 1300
 $EndSCHEMATC

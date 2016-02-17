@@ -29,7 +29,6 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:raspberry_pins
-LIBS:switches
 LIBS:piggrl_zero_baseboard-cache
 EELAYER 25 0
 EELAYER END

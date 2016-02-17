@@ -16,3 +16,6 @@ Onboard 3.3V @ 150mA LDO regulator
 2.2" hat variant uses resistors on the kathode, and connects directly to +5V
 
 the chinese knockoff board has all kathodes to gnd, and expects a regulated 3.4V (needs a regulator, since the leds will pull >100mA, more than a gpio can give)
+
+** 2016-02-17
+board already in the fab - additional trace: bat-low -> ID_SD has to be wired per hand
