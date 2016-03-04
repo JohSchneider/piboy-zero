@@ -1,4 +1,4 @@
-update=Thu 03 Mar 2016 08:47:16 PM CET
+update=Fri 04 Mar 2016 12:56:43 PM CET
 version=1
 last_client=kicad
 [cvpcb]
@@ -43,16 +43,6 @@ LibName13=led
 LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Pcbnew
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -88,5 +78,15 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=raspberry_pins
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [general]
 version=1
