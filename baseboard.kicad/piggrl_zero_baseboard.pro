@@ -1,4 +1,4 @@
-update=Fri 04 Mar 2016 12:56:43 PM CET
+update=Sat 05 Mar 2016 03:26:45 PM CET
 version=1
 last_client=kicad
 [cvpcb]
@@ -78,6 +78,8 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=raspberry_pins
+[general]
+version=1
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
@@ -88,5 +90,3 @@ NetFmtName=Pcbnew
 SpiceForceRefPrefix=0
 SpiceUseNetNumbers=0
 LabSize=60
-[general]
-version=1
