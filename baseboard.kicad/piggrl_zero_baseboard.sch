@@ -937,4 +937,8 @@ F 5 "BSS84P H6433" H 1600 1350 60  0001 C CNN "ManufacturerPartNumber"
 	1    1600 1350
 	1    0    0    -1  
 $EndComp
+Text Label 5500 6100 0    60   ~ 0
+USB_D+
+Text Label 4400 5950 0    60   ~ 0
+USB_D-
 $EndSCHEMATC
