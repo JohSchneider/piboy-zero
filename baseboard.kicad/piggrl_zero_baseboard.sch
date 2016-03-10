@@ -492,7 +492,7 @@ F 5 "ERJ-6ENF1001V" H 7100 5800 60  0001 C CNN "ManufacturerPartNumber"
 	0    1    1    0   
 $EndComp
 $Comp
-L Q_NPN_BCE Q4
+L Q_NPN_BEC Q4
 U 1 1 56BB78D0
 P 7450 5800
 F 0 "Q4" H 7750 5850 50  0000 R CNN
