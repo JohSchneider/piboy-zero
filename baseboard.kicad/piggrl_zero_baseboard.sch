@@ -324,14 +324,14 @@ $EndComp
 $Comp
 L R R3
 U 1 1 56BA1501
-P 1700 1700
-F 0 "R3" V 1780 1700 50  0000 C CNN
-F 1 "100k" V 1700 1700 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 1630 1700 30  0001 C CNN
-F 3 "" H 1700 1700 30  0000 C CNN
-F 4 "Panasonic" H 1700 1700 60  0001 C CNN "ManufacturerName"
-F 5 "ERJ-6ENF1003V" H 1700 1700 60  0001 C CNN "ManufacturerPartNumber"
-	1    1700 1700
+P 1400 1700
+F 0 "R3" V 1480 1700 50  0000 C CNN
+F 1 "100k" V 1400 1700 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 1330 1700 30  0001 C CNN
+F 3 "" H 1400 1700 30  0000 C CNN
+F 4 "Panasonic" H 1400 1700 60  0001 C CNN "ManufacturerName"
+F 5 "ERJ-6ENF1003V" H 1400 1700 60  0001 C CNN "ManufacturerPartNumber"
+	1    1400 1700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -791,7 +791,7 @@ Wire Wire Line
 Wire Wire Line
 	1700 1150 1700 1100
 Wire Wire Line
-	1400 2100 1400 1350
+	1400 2100 1400 1850
 Text Label 1800 4500 0    60   ~ 0
 btn_1
 Text Label 1800 4800 0    60   ~ 0
@@ -924,21 +924,25 @@ Wire Wire Line
 Wire Wire Line
 	2900 3800 2900 1300
 Connection ~ 2900 1300
-$Comp
-L Q_PMOS_GSD Q3
-U 1 1 56DAE7F2
-P 1600 1350
-F 0 "Q3" H 1900 1400 50  0000 R CNN
-F 1 "Q_PMOS_GSD" H 2250 1300 50  0000 R CNN
-F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 1550 1150 50  0001 C CNN
-F 3 "" H 1600 1350 50  0000 C CNN
-F 4 "Infineon Technologies" H 1600 1350 60  0001 C CNN "ManufacturerName"
-F 5 "BSS84P H6433" H 1600 1350 60  0001 C CNN "ManufacturerPartNumber"
-	1    1600 1350
-	1    0    0    -1  
-$EndComp
 Text Label 5500 6100 0    60   ~ 0
 USB_D+
 Text Label 4400 5950 0    60   ~ 0
 USB_D-
+$Comp
+L Q_NPN_BEC Q3
+U 1 1 56E20E5D
+P 1600 1350
+F 0 "Q3" H 1900 1400 50  0000 R CNN
+F 1 "MMBT2222" H 2200 1300 50  0000 R CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 1800 1450 29  0001 C CNN
+F 3 "" H 1600 1350 60  0000 C CNN
+F 4 "ON Semiconductor" H 1600 1350 60  0001 C CNN "ManufacturerName"
+F 5 "MMBT2222ALT1G" H 1600 1350 60  0001 C CNN "ManufacturerPartNumber"
+	1    1600 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1850 1700 1550
+Wire Wire Line
+	1400 1550 1400 1350
 $EndSCHEMATC
