@@ -324,25 +324,25 @@ $EndComp
 $Comp
 L R R3
 U 1 1 56BA1501
-P 1400 1700
-F 0 "R3" V 1480 1700 50  0000 C CNN
-F 1 "100k" V 1400 1700 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 1330 1700 30  0001 C CNN
-F 3 "" H 1400 1700 30  0000 C CNN
-F 4 "Panasonic" H 1400 1700 60  0001 C CNN "ManufacturerName"
-F 5 "ERJ-6ENF1003V" H 1400 1700 60  0001 C CNN "ManufacturerPartNumber"
-	1    1400 1700
+P 1700 1400
+F 0 "R3" V 1780 1400 50  0000 C CNN
+F 1 "100k" V 1700 1400 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 1630 1400 30  0001 C CNN
+F 3 "" H 1700 1400 30  0000 C CNN
+F 4 "Panasonic" H 1700 1400 60  0001 C CNN "ManufacturerName"
+F 5 "ERJ-6ENF1003V" H 1700 1400 60  0001 C CNN "ManufacturerPartNumber"
+	1    1700 1400
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR010
 U 1 1 56BA157C
-P 1700 1850
-F 0 "#PWR010" H 1700 1600 50  0001 C CNN
-F 1 "GND" H 1700 1700 50  0000 C CNN
-F 2 "" H 1700 1850 60  0000 C CNN
-F 3 "" H 1700 1850 60  0000 C CNN
-	1    1700 1850
+P 1700 1650
+F 0 "#PWR010" H 1700 1400 50  0001 C CNN
+F 1 "GND" H 1700 1500 50  0000 C CNN
+F 2 "" H 1700 1650 60  0000 C CNN
+F 3 "" H 1700 1650 60  0000 C CNN
+	1    1700 1650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -626,7 +626,7 @@ Wire Wire Line
 Wire Wire Line
 	3800 800  3800 950 
 Wire Wire Line
-	1700 1100 2950 1100
+	1400 1100 2950 1100
 Wire Wire Line
 	2950 800  2500 800 
 Wire Wire Line
@@ -638,9 +638,9 @@ Wire Wire Line
 Wire Wire Line
 	1700 1000 1700 750 
 Wire Wire Line
-	3400 2100 3400 1200
+	3750 1900 3750 1200
 Wire Wire Line
-	3400 1200 4250 1200
+	3750 1200 4250 1200
 Wire Wire Line
 	2500 3350 2350 3350
 Wire Wire Line
@@ -706,7 +706,7 @@ Wire Wire Line
 	6850 5600 6850 5800
 Connection ~ 6850 5800
 Wire Wire Line
-	3400 2100 1400 2100
+	1400 1900 3750 1900
 Connection ~ 5850 2700
 Wire Wire Line
 	5600 2800 6100 2800
@@ -789,9 +789,9 @@ Wire Wire Line
 Wire Wire Line
 	1650 4500 1800 4500
 Wire Wire Line
-	1700 1150 1700 1100
+	1700 1250 1700 1100
 Wire Wire Line
-	1400 2100 1400 1850
+	1400 1100 1400 1900
 Text Label 1800 4500 0    60   ~ 0
 btn_1
 Text Label 1800 4800 0    60   ~ 0
@@ -928,21 +928,9 @@ Text Label 5500 6100 0    60   ~ 0
 USB_D+
 Text Label 4400 5950 0    60   ~ 0
 USB_D-
-$Comp
-L Q_NPN_BEC Q3
-U 1 1 56E20E5D
-P 1600 1350
-F 0 "Q3" H 1900 1400 50  0000 R CNN
-F 1 "MMBT2222" H 2200 1300 50  0000 R CNN
-F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 1800 1450 29  0001 C CNN
-F 3 "" H 1600 1350 60  0000 C CNN
-F 4 "ON Semiconductor" H 1600 1350 60  0001 C CNN "ManufacturerName"
-F 5 "MMBT2222ALT1G" H 1600 1350 60  0001 C CNN "ManufacturerPartNumber"
-	1    1600 1350
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	1700 1850 1700 1550
-Wire Wire Line
-	1400 1550 1400 1350
+	1700 1650 1700 1550
+Connection ~ 1700 1100
+Text GLabel 3750 1200 0    60   Input ~ 0
+Enable
 $EndSCHEMATC
