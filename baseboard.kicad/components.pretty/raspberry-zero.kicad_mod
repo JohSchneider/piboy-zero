@@ -5609,6 +5609,11 @@
   (pad 34 smd rect (at 17.78 -12.7) (size 2 2) (layers F.Cu F.Paste F.Mask))
   (pad 38 smd rect (at 22.86 -12.7) (size 2 2) (layers F.Cu F.Paste F.Mask))
   (pad 40 smd rect (at 25.4 -12.7) (size 2 2) (layers F.Cu F.Paste F.Mask))
-  (pad 45 thru_hole rect (at 9.5 12.05) (size 1.5 2) (drill 1.2) (layers *.Cu *.Mask))
-  (pad 46 thru_hole rect (at 11.45 12.05) (size 1.5 2) (drill 1.2) (layers *.Cu *.Mask))
+  (pad 45 thru_hole rect (at 9 12.5) (size 1.5 2) (drill 1.2) (layers *.Cu *.Mask))
+  (pad 46 thru_hole rect (at 10.95 12.5) (size 1.5 2) (drill 1.2) (layers *.Cu *.Mask))
+  (model /mnt/gruscht/projects/piboy-zero/baseboard.kicad/components.pretty/3d-models/raspberry_pi_zero.x3d
+    (at (xyz 0.05 0 0.04))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
