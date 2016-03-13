@@ -15,4 +15,9 @@
   (fp_line (start -4.3 2.4) (end -4.3 -2.4) (layer F.SilkS) (width 0.15))
   (pad 1 smd rect (at -5.9 0) (size 1.8 2.2) (layers F.Cu F.Paste F.Mask))
   (pad 2 smd rect (at 5.9 0) (size 1.8 2.2) (layers F.Cu F.Paste F.Mask))
+  (model /mnt/gruscht/projects/piboy-zero/baseboard.kicad/components.pretty/3d-models/omrod_D2LS_21.x3d
+    (at (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
