@@ -9000,7 +9000,7 @@
     (arrow2a (pts (xy 214.7 155.8) (xy 213.573496 155.213579)))
     (arrow2b (pts (xy 214.7 155.8) (xy 213.573496 156.386421)))
   )
-  (gr_text 2016-03-05 (at 171.1 120.5) (layer B.SilkS)
+  (gr_text 2016-03-13 (at 171.1 120.5) (layer B.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify mirror))
   )
   (gr_text "Gnd\n3V\nSDA\nSCL\n11\n" (at 178.2 116.8 90) (layer B.SilkS)
