@@ -1,0 +1,20 @@
+* missing trace connecting powerboost:bat-low to the pi-zero
+- additional trace: bat-low -> ID_SD
+
+* wrong transistor pinout
+- for Q3, was DGS instead of more common GSD
+- turned out to be not needed and removed; single pulldown on enable pin and V_out from softpower works just fine
+
+* clearance for protuding hdmi-connector tabs
+
+* mounting holes undersized
+- where 2.8mm instead of target 3mm -> increased to 3.1 (plating will take up space)
+
+* rerouted usb
+- for equal-lentgh traces, with kicads differential-pair routing tools
+- and less vias/trace crossings
+
+* wrong pinout on BJT transistor for backlight
+- was BCE instead fof more common BEC
+
+-> all errors adressed with board revision 2016-03-13
