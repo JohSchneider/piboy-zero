@@ -1,0 +1,1 @@
+* start/select buttons had the wrong pinout/footprint assigned (these push buttons commonly close pins 1/2 to 3/4, not 1/3 to 2/4)
