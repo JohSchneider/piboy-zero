@@ -1,0 +1,20 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+  compatible = "brcm,bcm2708";
+
+  fragment@0 {
+    target = <&gpio>;
+    __overlay__ {
+      pinctrl-names = "default";
+      pinctrl-0 = <&pwm_audio_pins>;
+
+    pwm_audio_pins: pwm_audi_pins {
+	brcm,pins = <13 18>;   /* gpio no ('BCM' number) */
+	brcm,function = <4 2>; /* 0:in, 1:out, 2: alt5, 3: alt4, 4: alt0, 5: alt1, 6: alt2, 7: alt3 */
+	brcm,pull = <0 0>;     /* 2:up 1:down 0:none */
+      };
+    };
+  };
+ };
