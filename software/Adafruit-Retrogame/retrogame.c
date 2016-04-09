@@ -87,38 +87,22 @@ struct {
 	int pin;
 	int key;
 } *io, // In main() this pointer is set to one of the two tables below.
-   ioTFT[] = {
-	// This pin/key table is used if an Adafruit PiTFT display
-	// is detected (e.g. Cupcade or PiGRRL).
-	// Input   Output (from /usr/include/linux/input.h)
-	{   2,     KEY_LEFT     },   // Joystick (4 pins)
-	{   3,     KEY_RIGHT    },
-	{   4,     KEY_DOWN     },
-	{  17,     KEY_UP       },
-	{  27,     KEY_Z        },   // A/Fire/jump/primary
-	{  22,     KEY_X        },   // B/Bomb/secondary
-	{  23,     KEY_R        },   // Credit
-	{  18,     KEY_Q        },   // Start 1P
-	{  -1,     -1           } }, // END OF LIST, DO NOT CHANGE
-	// MAME must be configured with 'z' & 'x' as buttons 1 & 2 -
-	// this was required for the accompanying 'menu' utility to
-	// work (catching crtl/alt w/ncurses gets totally NASTY).
-	// Credit/start are likewise moved to 'r' & 'q,' reason being
-	// to play nicer with certain emulators not liking numbers.
-	// GPIO options are 'maxed out' with PiTFT + above table.
-	// If additional buttons are desired, will need to disable
-	// serial console and/or use P5 header.  Or use keyboard.
    ioStandard[] = {
-	// This pin/key table is used when the PiTFT isn't found
-	// (using HDMI or composite instead), as with our original
-	// retro gaming guide.
 	// Input   Output (from /usr/include/linux/input.h)
-	{  25,     KEY_LEFT     },   // Joystick (4 pins)
-	{   9,     KEY_RIGHT    },
-	{  10,     KEY_UP       },
-	{  17,     KEY_DOWN     },
-	{  23,     KEY_LEFTCTRL },   // A/Fire/jump/primary
-	{   7,     KEY_LEFTALT  },   // B/Bomb/secondary
+        // Pin numbers are the BCM ones, not the physical pineader numbers
+	{  23,     KEY_A       }, // X (SNES: blue)
+	{  24,     KEY_S       }, // Y (SNES: green)
+	{  27,     KEY_Z       }, // A (SNES: red)
+	{  22,     KEY_X       }, // B (SNES: yellow)
+	{  16,     KEY_Q       }, // shoulder left
+	{   7,     KEY_W       }, // shoulder right 
+	{  21,     KEY_ENTER   }, // start (left of tft)
+	{  26,     KEY_SPACE   }, // select (right of tft)
+	{  12,     KEY_UP      }, // dpad up
+	{   5,     KEY_DOWN    }, // dpad down
+	{  19,     KEY_LEFT    }, // dpad left
+	{  20,     KEY_RIGHT   }, // dpad right
+	{   6,     KEY_C       }, // dpad click
 	// For credit/start/etc., use USB keyboard or add more buttons.
 	{  -1,     -1           } }; // END OF LIST, DO NOT CHANGE
 
@@ -126,7 +110,7 @@ struct {
 // for a few seconds) issues an 'esc' keypress to MAME (which brings up
 // an exit menu or quits the current game).  The button combo is
 // configured with a bitmask corresponding to elements in the above io[]
-// array.  The default value here uses elements 6 and 7 (credit and start
+// array.  The default value here uses elements 6 and 7 (start and select
 // in the Cupcade pinout).  If you change this, make certain it's a combo
 // that's not likely to occur during actual gameplay (i.e. avoid using
 // joystick directions or hold-for-rapid-fire buttons).
@@ -208,6 +192,8 @@ static int boardType(void) {
 	char  buf[1024], *ptr;
 	int   n, board = 1; // Assume Pi1 Rev2 by default
 
+	return 1; // the pi-zero equals a B+
+
 	// Relies on info in /proc/cmdline.  If this becomes unreliable
 	// in the future, alt code below uses /proc/cpuinfo if any better.
 #if 1
@@ -287,8 +273,9 @@ int main(int argc, char *argv[]) {
 	signal(SIGKILL, signalHandler);
 
 	// Select io[] table for Cupcade (TFT) or 'normal' project.
-	io = (access("/etc/modprobe.d/adafruit.conf", F_OK) ||
-	      access("/dev/fb1", F_OK)) ? ioStandard : ioTFT;
+	io = ioStandard;
+	    /*(access("/etc/modprobe.d/adafruit.conf", F_OK) ||
+	      access("/dev/fb1", F_OK)) ? ioStandard : ioTFT;*/
 
 	// If this is a "Revision 1" Pi board (no mounting holes),
 	// remap certain pin numbers in the io[] array for compatibility.
@@ -355,7 +342,10 @@ int main(int argc, char *argv[]) {
 			// Set pin to input, detect rise+fall events
 			if(pinConfig(io[i].pin, "direction", "in") ||
 			   pinConfig(io[i].pin, "edge"     , "both"))
-				err("Pin config failed");
+			  {
+			    printf("error with %d\n", io[i].pin);
+			    err("Pin config failed");
+			  }
 			// Get initial pin value
 			sprintf(buf, "%s/gpio%d/value",
 			  sysfs_root, io[i].pin);
