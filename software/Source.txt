@@ -1,0 +1,9 @@
+Adafruit-Retrogame
+"Raspberry Pi GPIO-to-USB utility for classic game emulators"
+https://github.com/adafruit/Adafruit-Retrogame
+forked-revision: 4d59757aa820dcf8ff90dd155ed8119bbb082b89
+
+rpi-fbcp
+"Raspberry Pi Framebuffer Copy"
+https://github.com/tasanakorn/rpi-fbcp
+forked-revision: 8087a71d0330a078d91aa78656684ab5313616c6
