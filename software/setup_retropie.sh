@@ -36,8 +36,8 @@ svn export https://github.com/JohSchneider/piboy-zero/trunk/software /tmp/softwa
 cd /tmp/software
 
 ##### build&install fbcp #####
-# which copies the hdmi output to tft screen
-{
+# which copies the hdmi output to the tft screen
+(
     cd rpi-fbcp
     mkdir build
     cd build
@@ -45,16 +45,16 @@ cd /tmp/software
     make
     make install
     update-rc fbcp defaults
-}
+)
 
 ##### build&install retrogame #####
 # the gpio button daemon
-{
+(
     cd Adafruit-Retrogame
     make
     make install
     update-rc.d retrogame defaults
-}
+)
 
 ##### install pwm audio #####
 cp linux-config//pwm-audio-pi-zero-overlay.dtb /boot/overlays
