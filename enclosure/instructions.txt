@@ -1,0 +1,13 @@
+- prints well on a FDM-type printer (and probably on SLS/SLA/... as well :-)
+  what worked for me:
+  0.25mm nozzle
+  0.1mm layer height, 0.25mm extrusion width for the buttons
+  0.2mm layer height, 0.5mm extrusion width for the case
+
+- only the back piece needs generated support structures, all other parts can be printed without
+
+- the two case halfes are held together with M3x16 countersunk screws and M3 nuts
+
+- the M3 captive-nuts are designed to be inserted during the print (pause, push in, resume)
+
+- the screen has a piece of acrylic as protective cover, which measures: 55mm x 40mm x 2mm
