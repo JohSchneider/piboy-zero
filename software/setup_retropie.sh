@@ -44,7 +44,7 @@ cd /tmp/software
     cmake ..
     make
     make install
-    update-rc fbcp defaults
+    update-rc.d fbcp defaults
 )
 
 ##### build&install retrogame #####
