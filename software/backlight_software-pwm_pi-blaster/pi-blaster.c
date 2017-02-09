@@ -48,16 +48,9 @@ static char VERSION[] = "SNAPSHOT";
 // Created new known_pins with raspberry pi list of pins
 // to compare against the param received.
 static uint8_t known_pins[] = {
-		4,      // P1-7
-		17,     // P1-11
-		18,     // P1-12
-		27,     // P1-13
-		21,     // P1-13
-		22,     // P1-15
-		23,     // P1-16
-		24,     // P1-18
-		25,     // P1-22
+  1, // BCM-1, ID_SC, Pi-28
 };
+//// reduced to one pin, used to controll the backlight of a tft-screen
 
 // pin2gpio array is not setup as empty to avoid locking all GPIO
 // inputs as PWM, they are set on the fly by the pin param passed.
@@ -66,7 +59,7 @@ static uint8_t pin2gpio[8];
 // Set num of possible PWM channels based on the known pins size.
 #define NUM_CHANNELS    (sizeof(known_pins)/sizeof(known_pins[0]))
 
-#define DEVFILE			"/dev/pi-blaster"
+#define DEVFILE			"/dev/backlight"
 #define DEVFILE_MBOX    "/dev/pi-blaster-mbox"
 #define DEVFILE_VCIO	"/dev/vcio"
 
@@ -818,8 +811,8 @@ go_go_go(void)
 		} else if (!strcmp(lineptr, "debug_samples\n")) {
 			debug_dump_samples();
 		} else {
-			n = sscanf(lineptr, "%d=%f%c", &servo, &value, &nl);
-			if (n !=3 || nl != '\n') {
+			n = sscanf(lineptr, "%f%c", &value, &nl);
+			if (n !=2 || nl != '\n') {
 				//fprintf(stderr, "Bad input: %s", lineptr);
 				n = sscanf(lineptr, "release %d", &servo);
 				if (n != 1 || nl != '\n') {
@@ -828,12 +821,13 @@ go_go_go(void)
 					// Release Pin from pin2gpio array if the release command is received.
 					release_pwm(servo);
 				}
-			} else if (servo < 0){ // removed servo validation against CHANNEL_NUM no longer needed since now we used real GPIO names
-				fprintf(stderr, "Invalid channel number %d\n", servo);
+//			} else if (servo < 0){ // removed servo validation against CHANNEL_NUM no longer needed since now we used real GPIO names
+//				fprintf(stderr, "Invalid channel number %d\n", servo);
 			} else if (value < 0 || value > 1) {
 				fprintf(stderr, "Invalid value %f\n", value);
 			} else {
-				set_pwm(servo, value);
+//				set_pwm(servo, value);
+			  set_pwm(1, value); // there is only one pin, BCM_1 connected to the backlight
 			}
 		}
 	}
