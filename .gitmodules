@@ -1,0 +1,3 @@
+[submodule "software/backlight_software-pwm_pi-blaster"]
+	path = software/backlight_software-pwm_pi-blaster
+	url = https://github.com/sarfata/pi-blaster.git
