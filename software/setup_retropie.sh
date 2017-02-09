@@ -23,6 +23,10 @@ adafruit-pitft-helper -t 22 < <(printf 'n\nn\n')
 ## setup correct rotation
 sed -i 's;dtoverlay=pitft22,rotate=270;dtoverlay=pitft22,rotate=90;' /boot/config.txt
 
+## NOTE: 2016-04-14: might not be neccesary since pitft28r and notros kernel stuff seems to be in the upstream raspian kernel -> enabeling that overlay could be enough
+## ok, tested on vanilla raspbian: the kernel works, but needs the pitft_22_ dtb+config options from adafruit to work :-D
+
+
 
 ##### setup hdmi/framebuffer0 #####
 # change framebuffer size
