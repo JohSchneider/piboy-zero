@@ -78,3 +78,9 @@ cd backlight_software-pwm_pi-blaster
 sudo make install
 sudo cp linux-config/etc_default_pi-blaster /etc/default/pi-blaster
 )
+
+##### install pi-boy zero splashscreen #####
+sudo cp linux-config/splashscreen.png /opt/retropie/supplementary/splashscreen/piboy-zero.png
+sudo cat > /etc/splashscreen.list <<EOF
+/opt/retropie/supplementary/splashscreen/piboy-zero.png
+EOF
