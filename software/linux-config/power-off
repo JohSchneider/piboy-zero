@@ -1,0 +1,44 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          power-off
+# Required-Start:
+# Required-Stop:
+# Should-Stop:       halt kexec
+# Default-Start:
+# Default-Stop:      0
+# X-Stop-After: umountroot
+# Short-Description: pull the enable of the power-boost low
+### END INIT INFO
+
+PATH=/sbin:/bin
+. /lib/init/vars.sh
+
+. /lib/lsb/init-functions
+
+do_stop () {
+    [ "$VERBOSE" = no ] || log_action_begin_msg "powering down..."
+    /usr/bin/gpio -1 mode 7 output
+    /usr/bin/gpio -1 write 7 0
+    ES=$?
+    [ "$VERBOSE" = no ] || log_action_end_msg $ES
+}
+
+case "$1" in
+  start|status)
+	# No-op
+	;;
+  restart|reload|force-reload)
+	echo "Error: argument '$1' not supported" >&2
+	exit 3
+	;;
+  stop)
+	do_stop
+	;;
+  *)
+	echo "Usage: $0 start|stop" >&2
+	exit 3
+	;;
+esac
+
+
+## dtoverlay=gpio-poweroff,gpiopin=4,input,active_low
