@@ -68,3 +68,13 @@ then
 else
     echo 'dtoverlay=pwm-audio-pi-zero' >> /boot/config.txt
 fi
+
+##### build&install pi-blaster for PWM backlight ####
+#git clone https://github.com/sarfata/pi-blaster.git backlight_software-pwm_pi-blaster
+(
+cd backlight_software-pwm_pi-blaster
+./autogen.sh
+./configure && make
+sudo make install
+sudo cp linux-config/etc_default_pi-blaster /etc/default/pi-blaster
+)
