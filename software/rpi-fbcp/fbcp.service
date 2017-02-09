@@ -1,0 +1,13 @@
+[Unit]
+Description=framebuffer copy daemon
+
+[Service]
+#EnvironmentFile=-/etc/default/pi-blaster
+User=root
+ExecStart=/usr/local/bin/fbcp
+ExecReload=/bin/kill -s HUP $MAINPID
+## TODO: to fork or not to fork? fbcp itself doesn't
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
