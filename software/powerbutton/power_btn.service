@@ -1,0 +1,12 @@
+[Unit]
+Description=simple quick-hack power-button service
+
+[Service]
+#EnvironmentFile=-/etc/default/pi-blaster
+User=root
+ExecStart=/home/pi/power.py
+ExecReload=/bin/kill -s HUP $MAINPID
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
