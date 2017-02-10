@@ -4,3 +4,4 @@ cd "$DIR"
 
 set -ex
 rsync -Ppav emulationstation/ /home/pi/.emulationstation/
+rsync -Ppav RetroPie/ /home/pi/RetroPie/
