@@ -75,12 +75,17 @@ fi
 cd backlight_software-pwm_pi-blaster
 ./autogen.sh
 ./configure && make
-sudo make install
-sudo cp linux-config/etc_default_pi-blaster /etc/default/pi-blaster
+make install
+cp linux-config/etc_default_pi-blaster /etc/default/pi-blaster
 )
 
 ##### install pi-boy zero splashscreen #####
-sudo cp linux-config/splashscreen.png /opt/retropie/supplementary/splashscreen/piboy-zero.png
-sudo cat > /etc/splashscreen.list <<EOF
+cp linux-config/splashscreen.png /opt/retropie/supplementary/splashscreen/piboy-zero.png
+cat > /etc/splashscreen.list <<EOF
 /opt/retropie/supplementary/splashscreen/piboy-zero.png
 EOF
+
+##### install power button service #####
+cp powerbutton/power_btn.service /etc/systemd/system
+systemctl reload-daemon
+systemctl enable power_btn.service
